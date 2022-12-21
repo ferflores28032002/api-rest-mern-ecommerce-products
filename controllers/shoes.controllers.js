@@ -81,7 +81,7 @@ export const loadProductos = async (req, res) => {
 
     try {
         
-        const productos = await shoesModel.find
+        const productos = await shoesModel.find()
 
         if(productos.length>=0){
 
