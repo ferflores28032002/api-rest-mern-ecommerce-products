@@ -83,9 +83,17 @@ export const loadProductos = async (req, res) => {
         
         const productos = await shoesModel.find()
 
-        res.json({
-            productos
-        })
+        if(productos){
+
+            return res.json({
+                productos
+            })
+        }else {
+            return res.json({
+                msg: "no hay productos"
+            })
+        }
+
 
     } catch (error) {
         console.log(error)
