@@ -94,3 +94,27 @@ export const loadProductos = async (req, res) => {
 
 }
 
+export const loadProductsForId = async (req, res) => {
+
+    const { id } = req.params
+
+    try {
+        
+        const product = await productosModel.findById({ _id:id })
+
+
+        if(product) {
+            return res.json({
+                product
+            })
+        }else {
+            return res.status(404).json({
+                msg: "Producto no encontrado con el id" + id
+            })
+        }
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
