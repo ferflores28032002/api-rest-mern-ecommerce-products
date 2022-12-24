@@ -11,3 +11,6 @@ export const RUTA_MONGOOSE = process.env.RUTA;
 export const cloud_name = process.env.CLOUD_NAME;
 export const api_key = process.env.API_KEY;
 export const api_secrect = process.env.API_SECRECT;
+
+// configuracion para stripe 
+export const api_key_stripe = process.env.API_KEY_STRIPE
