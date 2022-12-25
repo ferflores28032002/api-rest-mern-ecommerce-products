@@ -12,9 +12,7 @@ const app = express();
 
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 app.use(express.json({ limit: "50mb" }));
-app.use(cors({
-  origin: 'https://api-rest-mern-ecommerce-products.vercel.app/create-checkout-session'
-}));
+app.use(cors());
 
 // RUTAS QUE UNEN A LOS CONTROLADORES Y LOS MODELOS
 app.use(productosRouter);

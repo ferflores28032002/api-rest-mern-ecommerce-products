@@ -28,8 +28,8 @@ export const paymentStripe = async (req, res) => {
     const session = await stripe.checkout.sessions.create({
       line_items,
       mode: "payment",
-      success_url: "https://fashion-s-ecommerce.netlify.app/",
-      cancel_url: "https://fashion-s-ecommerce.netlify.app/",
+      success_url: process.env.RUTA_DIRECCION,
+      cancel_url: process.env.RUTA_DIRECCION,
     });
 
     res.send({
