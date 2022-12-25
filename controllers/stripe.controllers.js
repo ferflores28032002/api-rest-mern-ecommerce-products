@@ -31,10 +31,7 @@ export const paymentStripe = async (req, res) => {
       success_url: process.env.RUTA_DIRECCION,
       cancel_url: process.env.RUTA_DIRECCION,
     });
-
-    res.send({
-      URL: session.url,
-    });
+    res.json({ URL: session.url });
   } catch (error) {
     console.log(error);
   }
