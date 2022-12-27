@@ -19,9 +19,9 @@ export const paymentStripe = async (req, res) => {
               id: producto._id,
             },
           },
-          unit_amount: producto.price * 100,
+          unit_amount: producto.price,
         },
-        quantity: producto.cantidad,
+        quantity: producto.cantidad * 100,
       };
     });
 
@@ -32,6 +32,7 @@ export const paymentStripe = async (req, res) => {
       cancel_url: process.env.RUTA_DIRECCION,
     });
     res.json({ URL: session.url });
+    
   } catch (error) {
     console.log(error);
   }
